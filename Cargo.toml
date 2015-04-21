@@ -1,0 +1,14 @@
+[package]
+
+name = "freetype-sys"
+version = "0.0.1"
+authors = [ "Your name <you@example.com>" ]
+links = "freetype2"
+build = "build.rs"
+
+[lib]
+name = "freetype_sys"
+path = "empty.rs"
+
+[build-dependencies]
+pkg-config = "*"
