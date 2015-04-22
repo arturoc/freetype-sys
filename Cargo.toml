@@ -12,3 +12,4 @@ path = "empty.rs"
 
 [build-dependencies]
 pkg-config = "*"
+hyper = "*"
