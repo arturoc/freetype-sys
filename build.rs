@@ -17,7 +17,8 @@ fn main() {
 				Command::new("curl")
 					.current_dir(&freetype_dir)
 					.arg("http://download.savannah.gnu.org/releases/freetype/freetype-2.5.5.tar.gz")
-					.arg("-O freetype-2.5.5.tar.gz")
+					.arg("-O")
+					.arg("freetype-2.5.5.tar.gz")
 					.status().unwrap();
 				Command::new("tar")
 					.current_dir(&freetype_dir)
