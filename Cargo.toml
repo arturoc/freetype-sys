@@ -14,5 +14,4 @@ path = "empty.rs"
 pkg-config = "*"
 
 [dependencies.zlib-sys]
-#git = "ssh://git@bitbucket.org/arturoc/zlib-sys"
-path = "../zlib-sys"
+git = "ssh://git@bitbucket.org/arturoc/zlib-sys"
