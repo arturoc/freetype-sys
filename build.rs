@@ -21,7 +21,9 @@ fn main() {
 			let out_dir = env::var("OUT_DIR").unwrap();
 			let dest_path = Path::new(&out_dir).join("libfreetype.a");
 			fs::copy(freetype_native_dir.join("objs/.libs/libfreetype.a"),dest_path).unwrap();
-			println!("cargo:rustc-flags= -L native={}",out_dir);
+			println!("cargo:rustc-link-search=native={}",out_dir);
+			println!("cargo:link_search={}",out_dir);
+			println!("cargo:include_search={}",freetype_native_dir.join("include").to_str().unwrap());
 		}
     }
 }
