@@ -14,6 +14,11 @@ fn main() {
 			let freetype_native_dir = Path::new(&freetype_dir).join("freetype-2.5.5");
 			Command::new("./configure")
 				.current_dir(&freetype_native_dir)
+				.arg("--without-bzip2")
+				.arg("--with-harfbuzz=no")
+				.arg("--enable-static=yes")
+				.arg("--enable-shared=no")
+				.arg("--with-zlib=no")
 				.status().unwrap();
 			Command::new("make")
 				.current_dir(&freetype_native_dir)
