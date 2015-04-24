@@ -2,7 +2,11 @@
 
 name = "freetype-sys"
 version = "0.0.1"
-authors = [ "Your name <you@example.com>" ]
+authors = [ "David Turner", "Robert Wilhelm", "Werner Lemberg", "Alexei Podtelezhnikov", "Suzuki Toshiya (鈴木俊哉)", "Arturo Castro <me@arturocastro.net>" ]
+description = "Rust build helpers for freetype. Licensed as GPL2 or FreeType License"
+license-file = "freetype-2.5.5/docs/FTL.txt"
+homepage = "http://freetype.org/"
+repository = "https://github.com/arturoc/freetype-sys"
 links = "freetype2"
 build = "build.rs"
 
