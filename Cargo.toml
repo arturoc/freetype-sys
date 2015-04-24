@@ -1,10 +1,10 @@
 [package]
 
-name = "freetype-sys"
+name = "freetype-src-sys"
 version = "0.0.1"
 authors = [ "David Turner", "Robert Wilhelm", "Werner Lemberg", "Alexei Podtelezhnikov", "Suzuki Toshiya (鈴木俊哉)", "Arturo Castro <me@arturocastro.net>" ]
 description = "Rust build helpers for freetype. Licensed as GPL2 or FreeType License"
-license-file = "freetype-2.5.5/docs/FTL.txt"
+license-file = "freetype-2.5.5/docs/FTL.TXT"
 homepage = "http://freetype.org/"
 repository = "https://github.com/arturoc/freetype-sys"
 links = "freetype2"
@@ -17,6 +17,5 @@ path = "empty.rs"
 [build-dependencies]
 pkg-config = "*"
 
-[dependencies.zlib-sys]
-#git = "ssh://git@bitbucket.org/arturoc/zlib-sys"
-path = "../zlib-sys"
+[dependencies]
+zlib-src-sys = "*"
