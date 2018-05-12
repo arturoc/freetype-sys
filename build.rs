@@ -98,7 +98,7 @@ fn main(){
 	let target_triple = env::var("TARGET").unwrap();
 	if target_triple.contains("linux") {
 		build_unix()
-	}else if target_triple.contains("macos") {
+	}else if target_triple.contains("darwin") {
 		build_unix()
 	}else if target_triple.contains("emscripten") {
 		build_emscripten()

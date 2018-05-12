@@ -1,7 +1,7 @@
 [package]
 
 name = "freetype-src-sys"
-version = "0.1.0"
+version = "0.1.1"
 authors = [ "David Turner", "Robert Wilhelm", "Werner Lemberg", "Alexei Podtelezhnikov", "Suzuki Toshiya (鈴木俊哉)", "Arturo Castro <me@arturocastro.net>" ]
 description = "Rust build helpers for freetype. Licensed as GPL2 or FreeType License"
 license-file = "freetype-2.8.1/docs/FTL.TXT"
