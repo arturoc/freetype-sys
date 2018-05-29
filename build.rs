@@ -46,6 +46,7 @@ fn build_windows() {
 	
 	#[cfg(not(debug_assertions))]
 	println!("cargo:rustc-link-lib=static=freetype");
+
 }
 
 fn build_emscripten() {
