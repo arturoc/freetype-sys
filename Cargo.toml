@@ -21,5 +21,3 @@ cmake = "0.1"
 [dependencies]
 zlib-src-sys = "0.1.1"
 
-[patch.crates-io]
-zlib-src-sys={path = "../zlib-sys"}
