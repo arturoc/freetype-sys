@@ -1,4 +1,5 @@
 extern crate pkg_config;
+extern crate cmake;
 
 use std::process::Command;
 use std::env;
@@ -33,6 +34,18 @@ fn build_unix() {
 			println!("cargo:include_search={}",freetype_native_dir.join("include").to_str().unwrap());
 		}
     }
+}
+
+fn build_windows() {
+	let dst = cmake::build("freetype-2.8.1");
+	let lib_dir = dst.join("lib");
+	println!("cargo:rustc-link-search=native={}", lib_dir.display());
+	
+	#[cfg(debug_assertions)]
+	println!("cargo:rustc-link-lib=static=freetyped");
+	
+	#[cfg(not(debug_assertions))]
+	println!("cargo:rustc-link-lib=static=freetype");
 }
 
 fn build_emscripten() {
@@ -100,6 +113,8 @@ fn main(){
 		build_unix()
 	}else if target_triple.contains("darwin") {
 		build_unix()
+	}else if target_triple.contains("windows") {
+		build_windows()
 	}else if target_triple.contains("emscripten") {
 		build_emscripten()
 	}else{
