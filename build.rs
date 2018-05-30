@@ -5,6 +5,8 @@ use std::process::Command;
 use std::env;
 use std::fs;
 use std::path::Path;
+#[cfg(unix)]
+use std::os::unix::fs::PermissionsExt;
 
 static VERSION: &str = "2.8.1";
 
@@ -15,6 +17,8 @@ fn build_unix() {
 			let freetype_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
 			let freetype_native_dir = Path::new(&freetype_dir).join(&format!("freetype-{}", VERSION));
             fs::create_dir(freetype_native_dir.join("objs")).is_ok();
+			#[cfg(unix)]
+			fs::set_permissions(freetype_native_dir.join("configure"), fs::Permissions::set_mode(0o755));
 			Command::new("./configure")
 				.current_dir(&freetype_native_dir)
 				.arg("--without-bzip2")
@@ -40,10 +44,10 @@ fn build_windows() {
 	let dst = cmake::build("freetype-2.8.1");
 	let lib_dir = dst.join("lib");
 	println!("cargo:rustc-link-search=native={}", lib_dir.display());
-	
+
 	#[cfg(debug_assertions)]
 	println!("cargo:rustc-link-lib=static=freetyped");
-	
+
 	#[cfg(not(debug_assertions))]
 	println!("cargo:rustc-link-lib=static=freetype");
 
@@ -55,8 +59,9 @@ fn build_emscripten() {
         Err(_) => {
 			let freetype_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
 			let freetype_native_dir = Path::new(&freetype_dir).join(&format!("freetype-{}", VERSION));
-
             fs::create_dir(freetype_native_dir.join("objs")).is_ok();
+			#[cfg(unix)]
+			fs::set_permissions(freetype_native_dir.join("configure"), fs::Permissions::set_mode(0o755));
 			Command::new("./configure")
 				.current_dir(&freetype_native_dir)
 				.arg("--without-bzip2")
@@ -65,7 +70,8 @@ fn build_emscripten() {
 				.arg("--enable-shared=no")
 				.arg("--with-zlib=no")
                 .arg("--with-png=no")
-				.status().unwrap();
+				.status()
+				.unwrap();
 
             Command::new("make")
                 .arg("clean")
