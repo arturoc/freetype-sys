@@ -18,7 +18,7 @@ fn build_unix() {
 			let freetype_native_dir = Path::new(&freetype_dir).join(&format!("freetype-{}", VERSION));
             fs::create_dir(freetype_native_dir.join("objs")).is_ok();
 			#[cfg(unix)]
-			fs::set_permissions(freetype_native_dir.join("configure"), fs::Permissions::set_mode(0o755));
+			fs::set_permissions(freetype_native_dir.join("configure"), fs::Permissions::from_mode(0o755));
 			Command::new("./configure")
 				.current_dir(&freetype_native_dir)
 				.arg("--without-bzip2")
@@ -61,7 +61,7 @@ fn build_emscripten() {
 			let freetype_native_dir = Path::new(&freetype_dir).join(&format!("freetype-{}", VERSION));
             fs::create_dir(freetype_native_dir.join("objs")).is_ok();
 			#[cfg(unix)]
-			fs::set_permissions(freetype_native_dir.join("configure"), fs::Permissions::set_mode(0o755));
+			fs::set_permissions(freetype_native_dir.join("configure"), fs::Permissions::from_mode(0o755));
 			Command::new("./configure")
 				.current_dir(&freetype_native_dir)
 				.arg("--without-bzip2")
