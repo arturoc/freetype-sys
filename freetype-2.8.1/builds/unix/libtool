@@ -100,7 +100,7 @@ EGREP="/bin/grep -E"
 FGREP="/bin/grep -F"
 
 # A BSD- or MS-compatible name lister.
-NM="/home/arturo/Code/emscripten-sdk/clang/fastcomp/build_incoming_64/bin/llvm-nm"
+NM="/home/arturo/Code/emsdk-portable/clang/e1.38.5_64bit/llvm-nm"
 
 # Whether we need soft or hard links.
 LN_S="ln -s"
@@ -145,7 +145,7 @@ want_nocaseglob="no"
 sharedlib_from_linklib_cmd="printf %s\\n"
 
 # The archiver.
-AR="/home/arturo/Code/emscripten-sdk/emscripten/incoming/emar"
+AR="/home/arturo/Code/emsdk-portable/emscripten/1.38.5/emar"
 
 # Flags to create an archive.
 AR_FLAGS="cru"
@@ -157,7 +157,7 @@ archiver_list_spec=""
 STRIP="strip"
 
 # Commands used to install an old-style archive.
-RANLIB="/home/arturo/Code/emscripten-sdk/emscripten/incoming/emranlib"
+RANLIB="/home/arturo/Code/emsdk-portable/emscripten/1.38.5/emranlib"
 old_postinstall_cmds="chmod 644 \$oldlib~\$RANLIB \$tool_oldlib"
 old_postuninstall_cmds=""
 
@@ -165,7 +165,7 @@ old_postuninstall_cmds=""
 lock_old_archive_extraction=no
 
 # A C compiler.
-LTCC="/home/arturo/Code/emscripten-sdk/emscripten/incoming/emcc"
+LTCC="/home/arturo/Code/emsdk-portable/emscripten/1.38.5/emcc"
 
 # LTCC compiler flags.
 LTCFLAGS=""
@@ -288,7 +288,7 @@ hardcode_into_libs=yes
 sys_lib_search_path_spec=" "
 
 # Detected run-time system search path for libraries.
-sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/local/cuda-8.0/targets/x86_64-linux/lib /usr/local/cuda-8.0/lib64 /usr/lib/x86_64-linux-gnu/libfakeroot /lib/i386-linux-gnu /usr/lib/i386-linux-gnu /lib/i686-linux-gnu /usr/lib/i686-linux-gnu /usr/local/lib /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu /usr/lib/nvidia-384 /usr/lib32/nvidia-384 /usr/lib/nvidia-384 /usr/lib32/nvidia-384 /lib32 /usr/lib32 /libx32 /usr/libx32 "
+sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/local/cuda-8.0/targets/x86_64-linux/lib /usr/local/cuda-8.0/lib64 /usr/lib/x86_64-linux-gnu/libfakeroot /usr/local/lib/i386-linux-gnu /lib/i386-linux-gnu /usr/lib/i386-linux-gnu /usr/local/lib/i686-linux-gnu /lib/i686-linux-gnu /usr/lib/i686-linux-gnu /usr/local/lib /usr/local/lib/x86_64-linux-gnu /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu /lib32 /usr/lib32 /libx32 /usr/libx32 "
 
 # Explicit LT_SYS_LIBRARY_PATH set during ./configure time.
 configure_time_lt_sys_library_path=""
@@ -308,7 +308,7 @@ striplib="strip --strip-unneeded"
 
 
 # The linker used to build libraries.
-LD="/home/arturo/Code/emscripten-sdk/emscripten/incoming/emcc"
+LD="/home/arturo/Code/emsdk-portable/emscripten/1.38.5/emcc"
 
 # How to create reloadable object files.
 reload_flag=" -r"
@@ -318,7 +318,7 @@ reload_cmds="\$LD\$reload_flag -o \$output\$reload_objs"
 old_archive_cmds="\$AR \$AR_FLAGS \$oldlib\$oldobjs~\$RANLIB \$tool_oldlib"
 
 # A language specific compiler.
-CC="/home/arturo/Code/emscripten-sdk/emscripten/incoming/emcc"
+CC="/home/arturo/Code/emsdk-portable/emscripten/1.38.5/emcc"
 
 # Is the compiler the GNU compiler?
 with_gcc=yes

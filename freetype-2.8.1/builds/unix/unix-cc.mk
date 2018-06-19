@@ -12,7 +12,7 @@
 # fully.
 
 
-CC           := /home/arturo/Code/emscripten-sdk/emscripten/incoming/emcc
+CC           := /home/arturo/Code/emsdk-portable/emscripten/1.38.5/emcc
 COMPILER_SEP := $(SEP)
 FT_LIBTOOL_DIR ?= $(BUILD_DIR)
 
@@ -83,7 +83,7 @@ CFLAGS   := -c -Wall  -DFT_CONFIG_CONFIG_H="<ftconfig.h>"
 
 # ANSIFLAGS: Put there the flags used to make your compiler ANSI-compliant.
 #
-ANSIFLAGS :=  -pedantic -ansi
+ANSIFLAGS :=  -ansi
 
 # C compiler to use -- we use libtool!
 #
@@ -98,7 +98,7 @@ LDFLAGS :=
 
 # export symbols
 #
-CCraw_build  := /home/arturo/Code/emscripten-sdk/emscripten/incoming/emcc	# native CC of building system
+CCraw_build  := /home/arturo/Code/emsdk-portable/emscripten/1.38.5/emcc	# native CC of building system
 E_BUILD      := 	# extension for executable on building system
 EXPORTS_LIST := $(OBJ_DIR)/ftexport.sym
 CCexe        := $(CCraw_build)	# used to compile `apinames' only
